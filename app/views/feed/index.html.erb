@@ -1,6 +1,29 @@
-<%@entry.each do |feed|%>
-  <%= link_to "#{feed.title.sanitize}", "#{feed.url}",:target => "_blank" %>
-  <%=feed.author%>   
-  <%=feed.published%> 
-  <%=feed.categories %>
+<p> はてぶ IT Entry </p>
+<%@hatena_it_entry.each do |feed|%>
+  <p><%= link_to "#{feed.title.sanitize}", "#{feed.url}",:target => "_blank" %>
+  <%=feed.published.in_time_zone('Tokyo') %></p>
+<%end%>
+
+<p> アプギガ </p>
+<%@appgiga_entry.each do |feed|%>
+  <p><%= link_to "#{feed.title.sanitize}", "#{feed.url}",:target => "_blank" %>
+  <%=feed.published.in_time_zone('Tokyo') %></p>
+<%end%>
+
+<p> codezine </p>
+<%@codezine_entry.each do |feed|%>
+  <p><%= link_to "#{feed.title.sanitize}", "#{feed.url}",:target => "_blank" %>
+  <%=feed.published.in_time_zone('Tokyo') %></p>
+<%end%>
+
+<p> Google Top News </p>
+<%@google_top_entry.each do |feed|%>
+  <p><%= link_to "#{feed.title.sanitize}", "#{feed.url}",:target => "_blank" %>
+  <%=feed.published.in_time_zone('Tokyo') %></p>
+<%end%>
+
+<p> Google ホーチミン News </p>
+<%@google_hcmc_entry.each do |feed|%>
+  <p><%= link_to "#{feed.title.sanitize}", "#{feed.url}",:target => "_blank" %>
+  <%=feed.published.in_time_zone('Tokyo') %></p>
 <%end%>
