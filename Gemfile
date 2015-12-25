@@ -34,17 +34,17 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'feedjira'
 gem 'therubyracer'
-gem 'less-rails'
-gem 'twitter-bootstrap-rails'
+gem 'static_model'
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug'
-
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'bullet'
+  gem 'ruby-growl'
+  gem 'quiet_assets'
+  gem 'rubocop', require: false
+  gem 'rails_best_practices', require: false
+  gem 'byebug', '~> 5.0.0'
+  gem 'pry-rails'
 end
 

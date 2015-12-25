@@ -1,0 +1,18 @@
+- id: 1
+  name: はてぶ IT Entry 
+  url: http://b.hatena.ne.jp/entrylist/it.rss
+- id: 2
+  name: GIGAZINE
+  url: http://feed.rssad.jp/rss/gigazine/rss_1.0
+- id: 3
+  name: アプギガ
+  url: http://plus.appgiga.jp/feed/user
+- id: 4
+  name: codezine
+  url: http://rss.rssad.jp/rss/codezine/new/20/index.xml
+- id: 5
+  name: Google Top News
+  url: http://news.google.com/news?hl=ja&ned=us&ie=UTF-8&oe=UTF-8&output=rss&num=5
+- id: 6
+  name: Google ホーチミン News
+  url: http://news.google.com/news?ned=us&ie=UTF-8&oe=UTF-8&q=%E3%83%9B%E3%83%BC%E3%83%81%E3%83%9F%E3%83%B3&output=rss&num=5&hl=ja
