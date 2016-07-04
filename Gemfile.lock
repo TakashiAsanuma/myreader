@@ -110,7 +110,7 @@ GEM
     multi_json (1.11.2)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.4.4)
+    mysql2 (0.3.21)
     nokogiri (1.6.7)
       mini_portile2 (~> 2.0.0.rc2)
     oauth2 (1.2.0)
@@ -250,7 +250,7 @@ DEPENDENCIES
   feedjira
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2
+  mysql2 (~> 0.3.13)
   omniauth
   omniauth-google-oauth2
   pry-rails
