@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'feedjira'
 gem 'therubyracer'
 gem 'static_model'
+gem 'config'
 
 # Google oauth
 gem 'devise'

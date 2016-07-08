@@ -4,16 +4,36 @@ namespace :feeds do
   desc "Create feeds"
 
   task :create => :environment do
+    FEED_LOG = ::Logger.new(File.join(Rails.root, Settings.feed.logger.path),
+      Settings.feed.logger.age,
+      Settings.feed.logger.size)
+
     feeds = {}
+    time = Time.zone.now
+
+    FEED_LOG.info("start create feed" )
+
     sites = Site.all
     sites.each do |site|
-      results = Feedjira::Feed.fetch_and_parse(site.url)
-      results.entries.first(5).each do |feed|
-        #published_at = feed.published.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M")
-        summary = ActionController::Base.helpers.truncate(ActionController::Base.helpers.strip_tags(feed.summary), :length => 120)
-        Feed.create(site_id: site.id, title: feed.title, url: feed.url, published_at: feed.published, summary: summary)
-        puts feed.title
+      begin
+        results = Feedjira::Feed.fetch_and_parse(site.url)
+      rescue => e
+        FEED_LOG.error(e.message)
+      end
+      if results.present?
+        results.entries.first(5).each do |feed|
+          begin
+            summary = ActionController::Base.helpers.truncate(ActionController::Base.helpers.strip_tags(feed.summary), :length => 120)
+            old_feed = Feed.where(["created_at < :created_at and site_id = :site_id", {created_at: time, site_id: site.id}]).limit(1)
+            Feed.destroy(old_feed.first.id) if old_feed.present?
+            Feed.create(site_id: site.id, title: feed.title, url: feed.url, published_at: feed.published, summary: summary)
+            FEED_LOG.info("create feed: " + feed.title )
+          rescue => e
+            FEED_LOG.error(e.message)
+          end
+        end
       end
     end
+    FEED_LOG.info("finish create feed" )
   end
 end
