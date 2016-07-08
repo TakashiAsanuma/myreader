@@ -1,17 +1,17 @@
 <%= current_user.email %>
 
-<% @sections.each do |site, section| %>
-  <section>
-    <h1><%= site %> </h1>
-    <% section.each do |feed| %>
-      <article>
-      <dl>
-        <dt><%= link_to "#{feed.title.sanitize}", "#{feed.url}",:target => "_blank" %></dt>
-        <dd><time datatime= <%= feed.published.in_time_zone('Tokyo').strftime("%Y-%m-%d") %>>
-        <%= feed.published.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M") %></time></dd>
-      </dl>
-      </article>
+<% @feeds.each do |feed| %>
+  <article>
+  <dl>
+    <% if feed.title.present? %>
+      <dt><%= link_to "#{feed.title}", "#{feed.url}",:target => "_blank" %></dt>
+      <dd><time datatime= <%= feed.published_at.in_time_zone('Tokyo').strftime("%Y-%m-%d") %>>
+      <%= feed.published_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M") %></time>
+      &nbsp;&nbsp;
+      <%= feed.site.name %></dd>
+      <dd><%= feed.summary %> </dd>
     <% end %>
-  </section>
+  </dl>
+  </article>
 <% end %>
 

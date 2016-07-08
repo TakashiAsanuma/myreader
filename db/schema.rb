@@ -11,17 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705104918) do
+ActiveRecord::Schema.define(version: 20160708031446) do
 
-  create_table "feeds", force: :cascade do |t|
-    t.integer  "user_id",    limit: 4,   default: 0,  null: false
-    t.string   "name",       limit: 255, default: "", null: false
-    t.string   "url",        limit: 255, default: "", null: false
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+  create_table "categories", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
-  add_index "feeds", ["user_id"], name: "index_feeds_on_user_id", using: :btree
+  create_table "feeds", force: :cascade do |t|
+    t.integer  "site_id",      limit: 4
+    t.string   "title",        limit: 255
+    t.string   "url",          limit: 255
+    t.datetime "published_at"
+    t.string   "summary",      limit: 255
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  add_index "feeds", ["site_id"], name: "index_feeds_on_site_id", using: :btree
+
+  create_table "sites", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.string   "url",         limit: 255
+    t.integer  "category_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "sites", ["category_id"], name: "index_sites_on_category_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false

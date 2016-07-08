@@ -1,3 +1,4 @@
-class Site < StaticModel::Base
-  set_data_file "#{Rails.root}/db/statics/site.yml"
+class Site < ActiveRecord::Base
+  belongs_to :category
+  has_many   :feeds, dependent: :destroy
 end
