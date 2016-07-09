@@ -6,10 +6,11 @@
   <% @categories.each do |category| %>
     <li style="float:left">|&nbsp;<%= link_to "#{category.name}", "/feed?category_id=#{category.id}" %>&nbsp;</li>
   <% end %>
-  <li style="float:left">|<li>
+  <li>|<li>
 </ul>
 </category>
-<br />
+
+<p>Subject</p>
 <% @feeds.each do |feed| %>
   <article>
   <dl>
@@ -24,4 +25,3 @@
   </dl>
   </article>
 <% end %>
-
