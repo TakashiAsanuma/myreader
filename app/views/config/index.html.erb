@@ -1,0 +1,20 @@
+<%= link_to "#{current_user.email}", "/config" %>
+<%= link_to "News Top", "/feed" %>
+
+<category>
+<ul style="list-style:none">
+  <% @categories.each do |category| %>
+    <li style="float:left">|&nbsp;<%= link_to "#{category.name}", "/config?category_id=#{category.id}" %>&nbsp;</li>
+  <% end %>
+  <li style="float:left">|<li>
+</ul>
+</category>
+<site>
+<br />
+<ul>
+<% @sites.each do |site| %>
+  <li><%= site.name %></li>
+<% end %>
+</ul>
+</site>
+

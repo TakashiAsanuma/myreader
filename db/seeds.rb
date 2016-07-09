@@ -9,8 +9,10 @@
 # coding: utf-8
 
 Category.create(:id => 1, :name => 'Tech News')
-Category.create(:id => 2, :name => 'Company Tech Blog')
-Category.create(:id => 3, :name => 'Personal Tech Blog')
-Category.create(:id => 4, :name => 'Github Release')
-Category.create(:id => 5, :name => 'Github Trend')
+Category.create(:id => 2, :name => 'Develop News')
+Category.create(:id => 3, :name => 'Company Tech Blog')
+Category.create(:id => 4, :name => 'Personal Tech Blog')
+Category.create(:id => 5, :name => 'Github Release')
+Category.create(:id => 6, :name => 'Github Trend')
+Category.create(:id => 99, :name => 'General News')
 

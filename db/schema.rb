@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160708031446) do
+ActiveRecord::Schema.define(version: 20160708082942) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160708031446) do
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "site_id",      limit: 4
+    t.integer  "category_id",  limit: 4
     t.string   "title",        limit: 255
     t.string   "url",          limit: 255
     t.datetime "published_at"
@@ -29,6 +30,7 @@ ActiveRecord::Schema.define(version: 20160708031446) do
     t.datetime "updated_at",               null: false
   end
 
+  add_index "feeds", ["category_id"], name: "index_feeds_on_category_id", using: :btree
   add_index "feeds", ["site_id"], name: "index_feeds_on_site_id", using: :btree
 
   create_table "sites", force: :cascade do |t|

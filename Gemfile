@@ -36,6 +36,7 @@ gem 'feedjira'
 gem 'therubyracer'
 gem 'static_model'
 gem 'config'
+gem 'whenever', require: false 
 
 # Google oauth
 gem 'devise'
