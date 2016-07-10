@@ -1,5 +1,3 @@
-require 'feedjira'
-
 class FeedController < ApplicationController
   before_action :init_myread 
 

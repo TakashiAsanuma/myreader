@@ -4,10 +4,6 @@ class ConfigController < ApplicationController
   def index
   end
 
-  def choise
-    @myreads = Myread.where(:user_id => current_user.id)
-  end
-
   def add
     @categories = Category.all
     if params[:category_id].present?
@@ -16,4 +12,5 @@ class ConfigController < ApplicationController
       @channels = Channel.enabled.undefault.all
     end
   end
+
 end

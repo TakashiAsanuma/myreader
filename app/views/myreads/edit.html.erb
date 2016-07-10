@@ -1,0 +1,14 @@
+<%= link_to "#{current_user.email}", "/config" %>
+<%= link_to "News Top", "/feed" %>
+
+<%= form_tag myreads_path, method: :put do %>
+  <% @myreads.each do |myread| %>
+    <ul>
+    <%= fields_for "myreads[]", myread do |fi| %>
+      <li><%= fi.check_box :enabled %>
+      <%= myread.channel_name %></li>
+    <% end %>
+    </ul>
+  <% end %>
+  <%= submit_tag %>
+<% end %>

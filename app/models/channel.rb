@@ -7,4 +7,5 @@ class Channel < ActiveRecord::Base
   scope :enabled, -> { where(enabled: true) }
   scope :default, -> { where(default_flag: true) }
   scope :undefault, -> { where(default_flag: false) }
+
 end
