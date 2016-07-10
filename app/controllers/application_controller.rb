@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource) 
     session[:login_redirect_to] || feed_index_path
   end
+
+  def init_myread
+    Myread.init_myread(current_user.id)
+  end
 end

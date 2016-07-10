@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710062546) do
+ActiveRecord::Schema.define(version: 20160710082535) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name",       limit: 255
@@ -20,16 +20,16 @@ ActiveRecord::Schema.define(version: 20160710062546) do
   end
 
   create_table "channels", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.integer  "category_id", limit: 4
-    t.boolean  "default"
+    t.string   "name",         limit: 255
+    t.integer  "category_id",  limit: 4
+    t.boolean  "default_flag"
     t.boolean  "enabled"
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   add_index "channels", ["category_id"], name: "index_channels_on_category_id", using: :btree
-  add_index "channels", ["default"], name: "index_channels_on_default", using: :btree
+  add_index "channels", ["default_flag"], name: "index_channels_on_default_flag", using: :btree
   add_index "channels", ["enabled"], name: "index_channels_on_enabled", using: :btree
 
   create_table "feeds", force: :cascade do |t|
@@ -41,10 +41,23 @@ ActiveRecord::Schema.define(version: 20160710062546) do
     t.string   "summary",      limit: 255
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.boolean  "default_flag"
   end
 
   add_index "feeds", ["channel_id"], name: "index_feeds_on_channel_id", using: :btree
   add_index "feeds", ["site_id"], name: "index_feeds_on_site_id", using: :btree
+
+  create_table "myreads", force: :cascade do |t|
+    t.integer  "user_id",    limit: 4
+    t.integer  "channel_id", limit: 4
+    t.boolean  "enabled"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+  end
+
+  add_index "myreads", ["channel_id"], name: "index_myreads_on_channel_id", using: :btree
+  add_index "myreads", ["enabled"], name: "index_myreads_on_enabled", using: :btree
+  add_index "myreads", ["user_id"], name: "index_myreads_on_user_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
     t.string   "name",       limit: 255

@@ -1,4 +1,4 @@
-# This file should contain all the record creation needed to seed the database with its default values.
+# This file should contain all the record creation needed to seed the database with its default_flag values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
 # Examples:
@@ -17,19 +17,19 @@ Category.first_or_create([
 ])
 
 Channel.first_or_create([
-  {:id => 1, :name => 'Tech News', :category_id => 1, :default => true, :enabled => true},
-  {:id => 2, :name => 'Gajet News', :category_id => 1, :default => true, :enabled => true},
-  {:id => 3, :name => 'Develop News', :category_id => 1, :default => true, :enabled => true},
-  {:id => 4, :name => 'Security News', :category_id => 1, :default => true, :enabled => true},
-  {:id => 201, :name => 'Design News', :category_id => 200, :default => true, :enabled => true},
-  {:id => 202, :name => 'Frontend News', :category_id => 200, :default => true, :enabled => true},
-  {:id => 301, :name => 'Company Tech Blog', :category_id => 300, :default => true, :enabled => true},
-  {:id => 302, :name => 'Personal Tech Blog', :category_id => 300, :default => true, :enabled => true},
-  {:id => 303, :name => 'Company Design Blog', :category_id => 300, :default => true, :enabled => true},
-  {:id => 304, :name => 'Personal Design Blog', :category_id => 300, :default => true, :enabled => true},
-  {:id => 401, :name => 'Github Release', :category_id => 400, :default => true, :enabled => true},
-  {:id => 402, :name => 'Github Trend', :category_id => 400, :default => true, :enabled => true},
-  {:id => 999, :name => 'General News', :category_id => 999, :default => true, :enabled => true}
+  {:id => 1, :name => 'Tech News', :category_id => 1, :default_flag => true, :enabled => true},
+  {:id => 2, :name => 'Gajet News', :category_id => 1, :default_flag => true, :enabled => true},
+  {:id => 3, :name => 'Develop News', :category_id => 1, :default_flag => true, :enabled => true},
+  {:id => 4, :name => 'Security News', :category_id => 1, :default_flag => true, :enabled => true},
+  {:id => 201, :name => 'Design News', :category_id => 200, :default_flag => true, :enabled => true},
+  {:id => 202, :name => 'Frontend News', :category_id => 200, :default_flag => true, :enabled => true},
+  {:id => 301, :name => 'Company Tech Blog', :category_id => 300, :default_flag => true, :enabled => true},
+  {:id => 302, :name => 'Personal Tech Blog', :category_id => 300, :default_flag => true, :enabled => true},
+  {:id => 303, :name => 'Company Design Blog', :category_id => 300, :default_flag => true, :enabled => true},
+  {:id => 304, :name => 'Personal Design Blog', :category_id => 300, :default_flag => true, :enabled => true},
+  {:id => 401, :name => 'Github Release', :category_id => 400, :default_flag => false, :enabled => true},
+  {:id => 402, :name => 'Github Trend', :category_id => 400, :default_flag => false, :enabled => true},
+  {:id => 999, :name => 'General News', :category_id => 999, :default_flag => true, :enabled => true}
 ])
 
 Site.first_or_create([
@@ -55,3 +55,4 @@ Site.first_or_create([
   {:id => 20, :name => 'CodeZine', :channel_id => 3, :url => 'http://rss.rssad.jp/rss/codezine/new/20/index.xml'},
   {:id => 21, :name => 'Hacker News', :channel_id => 3, :url => 'https://news.ycombinator.com/rss'},
 ])
+

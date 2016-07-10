@@ -3,8 +3,8 @@
 
 <channel>
 <ul style="list-style:none">
-  <% @channels.each do |channel| %>
-    <li style="float:left">|&nbsp;<%= link_to "#{channel.name}", "/feed?channel_id=#{channel.id}" %>&nbsp;</li>
+  <% @myreads.each do |myread| %>
+    <li style="float:left">|&nbsp;<%= link_to "#{myread.channel_name}", "/feed?channel_id=#{myread.channel_id}" %>&nbsp;</li>
   <% end %>
   <li>|<li>
 </ul>

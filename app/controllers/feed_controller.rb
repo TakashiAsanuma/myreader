@@ -1,12 +1,14 @@
 require 'feedjira'
 
 class FeedController < ApplicationController
+  before_action :init_myread 
+
   def index
-    @channels = Channel.all
+    @myreads = Myread.enabled.where(:user_id => current_user.id)
     if params[:channel_id].present?
       @feeds = Feed.where(["channel_id = :channel_id", {channel_id: params[:channel_id]}]).order("published_at DESC")
     else
-      @feeds = Feed.all.order("published_at DESC")
+      @feeds = Feed.default.all.order("published_at DESC")
     end
   end
 end
