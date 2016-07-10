@@ -1,4 +1,5 @@
 class Feed < ActiveRecord::Base
   belongs_to :site
+  belongs_to :channel
   delegate :name, :to => :site, :prefix => true
 end

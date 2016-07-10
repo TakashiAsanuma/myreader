@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-  has_many :sites, dependent: :destroy
+  has_many :channels, dependent: :destroy
 end

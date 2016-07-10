@@ -27,7 +27,7 @@ namespace :feeds do
             old_feed = Feed.where(["created_at < :created_at and site_id = :site_id", {created_at: time, site_id: site.id}]).limit(1)
             Feed.destroy(old_feed.first.id) if old_feed.present?
             if feed.published <= time
-              Feed.create(site_id: site.id, category_id: site.category_id, title: feed.title, url: feed.url, published_at: feed.published, summary: summary)
+              Feed.create(site_id: site.id, channel_id: site.channel_id, title: feed.title, url: feed.url, published_at: feed.published, summary: summary)
             end
             FEED_LOG.info("create feed: " + feed.title )
           rescue => e
