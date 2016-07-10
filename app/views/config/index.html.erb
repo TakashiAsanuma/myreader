@@ -1,20 +1,7 @@
 <%= link_to "#{current_user.email}", "/config" %>
 <%= link_to "News Top", "/feed" %>
 
-<category>
-<ul style="list-style:none">
-  <% @categories.each do |category| %>
-    <li style="float:left">|&nbsp;<%= link_to "#{category.name}", "/config?category_id=#{category.id}" %>&nbsp;</li>
-  <% end %>
-  <li style="float:left">|<li>
-</ul>
-</category>
-<site>
-<br />
 <ul>
-<% @channels.each do |channel| %>
-  <li><%= channel.name %></li>
-<% end %>
+  <li><%= link_to "Choise Channel", "/config/choise" %></li>
+  <li><%= link_to "Add Channel", "/config/add" %></li>
 </ul>
-</site>
-

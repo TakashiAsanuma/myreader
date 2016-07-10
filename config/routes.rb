@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
   resources :feed, :only => [:index]
 
-  resources :config, :only => [:index]
-
+  resources :config, :only => [:index] do
+    get '/choise', action: :choise, on: :collection
+    get '/add',    action: :add,    on: :collection
+  end
 end
