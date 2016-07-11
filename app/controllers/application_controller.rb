@@ -17,6 +17,8 @@ class ApplicationController < ActionController::Base
   end
 
   def init_myread
+    user = User.find(current_user.id)
+    user.update(region: 0)
     Myread.init_myread(current_user.id)
   end
 end
