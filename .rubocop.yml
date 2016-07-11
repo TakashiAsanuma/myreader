@@ -1,7 +1,7 @@
 AllCops:
 
-  # Rails特有のチェックを実行
-  RunRailsCops: true
+  Rails:
+    Enabled: true
 
   # チェック対象外ディレクトリ
   Exclude:
@@ -58,7 +58,7 @@ Style/RaiseArgs:
   Enabled: false
 
 # Hashの最後のカンマを許容
-Style/TrailingComma:
+Style/TrailingCommaInLiteral:
   Enabled: false
 
 # コンマの後のスペース無しを許容
