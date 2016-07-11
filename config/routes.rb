@@ -7,12 +7,12 @@ Rails.application.routes.draw do
     omniauth_callbacks: "users/omniauth_callbacks"
   }
 
-  resources :feed, :only => [:index]
+  resources :feed, only: [:index]
 
-  resources :config, :only => [:index] do
+  resources :config, only: [:index] do
     get '/choise', action: :choise, on: :collection
     get '/add',    action: :add,    on: :collection
   end
 
-  resource :myreads
+  resource :myreads, only: [:edit, :update]
 end
