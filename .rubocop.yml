@@ -1,0 +1,127 @@
+AllCops:
+
+  # Rails特有のチェックを実行
+  RunRailsCops: true
+
+  # チェック対象外ディレクトリ
+  Exclude:
+      - 'db/**/*'
+      - 'config/**/*'
+      - 'script/**/*'
+      - 'bin/**/*'
+      - 'vendor/**/*'
+      - 'spec/*'
+      - 'Guardfile'
+
+# Ascii文字以外のコメントを許容
+Style/AsciiComments:
+  Enabled: false
+
+# 1行の最大文字列長を緩和
+Metrics/LineLength:
+  Max: 160
+
+# メソッド定義の行数を緩和
+Metrics/MethodLength:
+  Max: 50
+
+# Classの最大長制限
+Metrics/ClassLength:
+  Max: 300
+
+# top-classでのコメントを任意に
+Style/Documentation:
+  Enabled: false
+
+# 1行if文を使用可に
+Style/IfUnlessModifier:
+  Enabled: false
+
+# nestしたclass/moduleを許容
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# 後置rescueを許容
+Style/RescueModifier:
+  Enabled: false
+
+# and/orを許容
+Style/AndOr:
+  Enabled: false
+
+# ABCチェックを無効
+Metrics/AbcSize:
+  Enabled: false
+
+# ???
+Style/RaiseArgs:
+  Enabled: false
+
+# Hashの最後のカンマを許容
+Style/TrailingComma:
+  Enabled: false
+
+# コンマの後のスペース無しを許容
+# hoge(1,2) => hoge(1, 2)
+Style/SpaceAfterComma:
+  Enabled: false
+
+# Stringのシングルクォートチェックを許容
+# "aaa" -> 'aaa'
+Style/StringLiterals:
+  Enabled: false
+
+# コロンの後のスペースを許容
+# hoge(x:1) -> hoge(x: 1)
+Style/SpaceAfterColon:
+  Enabled: false
+
+# コメントの後のスペース無しを許容
+# コードの一時コメントアウト対策
+Style/LeadingCommentSpace:
+  Enabled: false
+
+# メソッドの最後のreturnを許容
+Style/RedundantReturn:
+  Enabled: false
+
+# 文字列Arrayを作成する場合には%w/%Wを使わないのを許容
+# ["aaa", 'bbb', 'ccc'] => %w(aaa bbb ccc)
+Style/WordArray:
+  Enabled: false
+
+# Hashパラメータの前後の空白無しを許容
+# ({1, 2}) => ( {1, 2} )
+Style/BracesAroundHashParameters:
+  Enabled: false
+
+# Hashのインデントに2つ以上の空白を許可
+Style/IndentHash:
+  Enabled: false
+
+# 複数行のメソッドチェーン?を許可
+Style/MultilineOperationIndentation:
+  Enabled: false
+
+# 複数のメソッドチェーンを許可
+Style/MultilineBlockChain:
+  Enabled: false
+
+# self.methodを許可
+# selfの使用は意図的にローカル変数等との区別を行うことが多いため
+Style/RedundantSelf:
+  Enabled: false
+
+# {}周り
+# 通常は良いが、メソッドチェーン等の一部に悪影響が出るため
+# hoge.select{|v|v.fuga} => hoge.select{ |v|v.fuga }
+Style/SpaceInsideBlockBraces:
+  Enabled: false
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+# オペレータの前後に空白無しを許可
+# 通常は問題ないが、+=等の場合にも反応するため
+# += => + =
+Style/SpaceAroundOperators:
+  Enabled: false

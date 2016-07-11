@@ -5,8 +5,8 @@ class Myread < ActiveRecord::Base
   scope :enabled, -> { where(enabled: true) }
   scope :region, ->(region) { where("region = ?", region) }
 
-  delegate :name, :to => :channel, :prefix => true
-  delegate :id,   :to => :channel, :prefix => true
+  delegate :name, to: :channel, prefix: true
+  delegate :id,   to: :channel, prefix: true
 
   validates :user_id,    presence: true
   validates :channel_id, presence: true
