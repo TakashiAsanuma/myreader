@@ -3,6 +3,7 @@ class Myread < ActiveRecord::Base
   belongs_to :channel
 
   scope :enabled, -> { where(enabled: true) }
+  scope :region, ->(region) { where("region = ?", region) }
 
   delegate :name, :to => :channel, :prefix => true
   delegate :id, :to => :channel, :prefix => true
@@ -12,7 +13,7 @@ class Myread < ActiveRecord::Base
     if self.where(:user_id => user_id).blank?
       channels = Channel.enabled.default.all
       channels.each do |channel|
-        self.create(user_id: user_id, channel_id: channel.id, enabled: true)
+        self.create(user_id: user_id, channel_id: channel.id, region: channel.region, enabled: true)
       end
     end
   end
