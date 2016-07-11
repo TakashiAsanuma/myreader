@@ -115,7 +115,6 @@ GEM
     multi_json (1.12.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
-    mysql2 (0.3.21)
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
@@ -139,6 +138,7 @@ GEM
     orm_adapter (0.5.0)
     parser (2.3.1.2)
       ast (~> 2.2)
+    pg (0.18.4)
     pkg-config (1.1.7)
     powerpack (0.1.1)
     pry (0.10.3)
@@ -259,9 +259,9 @@ DEPENDENCIES
   feedjira
   jbuilder (~> 2.0)
   jquery-rails
-  mysql2 (~> 0.3.13)
   omniauth
   omniauth-google-oauth2
+  pg
   pry-rails
   quiet_assets
   rails (= 4.2.5.1)
