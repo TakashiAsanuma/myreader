@@ -5,11 +5,12 @@ class ConfigController < ApplicationController
   end
 
   def add
-    @categories = Category.where(region: current_user.region)
+    region = current_user.region
+    @categories = Category.where(region: region)
     if params[:category_id].present?
-      @channels = Channel.enabled.undefault.where(category_id: params[:category_id], region: current_user.region).order("id")
+      @channels = Channel.enabled.undefault.where(category_id: params[:category_id], region: region).order("id")
     else
-      @channels = Channel.enabled.undefault.where(region: current_user.region)
+      @channels = Channel.enabled.undefault.where(region: region)
     end
   end
 

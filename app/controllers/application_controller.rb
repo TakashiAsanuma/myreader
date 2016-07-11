@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource) 
-    session[:login_redirect_to] || feed_index_path
+    session[:login_redirect_to] || stored_location_for(resource) || feed_index_path
   end
 
   def init_myread
