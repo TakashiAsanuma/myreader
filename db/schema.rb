@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160711133008) do
+ActiveRecord::Schema.define(version: 20160712093657) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20160711133008) do
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
   end
+
+  add_index "categories", ["region"], name: "index_categories_on_region", using: :btree
 
   create_table "channels", force: :cascade do |t|
     t.string   "name",         limit: 255
@@ -36,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160711133008) do
   add_index "channels", ["category_id"], name: "index_channels_on_category_id", using: :btree
   add_index "channels", ["default_flag"], name: "index_channels_on_default_flag", using: :btree
   add_index "channels", ["enabled"], name: "index_channels_on_enabled", using: :btree
+  add_index "channels", ["region"], name: "index_channels_on_region", using: :btree
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "site_id"
@@ -51,6 +54,7 @@ ActiveRecord::Schema.define(version: 20160711133008) do
   end
 
   add_index "feeds", ["channel_id"], name: "index_feeds_on_channel_id", using: :btree
+  add_index "feeds", ["region"], name: "index_feeds_on_region", using: :btree
   add_index "feeds", ["site_id"], name: "index_feeds_on_site_id", using: :btree
 
   create_table "myreads", force: :cascade do |t|
@@ -64,6 +68,7 @@ ActiveRecord::Schema.define(version: 20160711133008) do
 
   add_index "myreads", ["channel_id"], name: "index_myreads_on_channel_id", using: :btree
   add_index "myreads", ["enabled"], name: "index_myreads_on_enabled", using: :btree
+  add_index "myreads", ["region"], name: "index_myreads_on_region", using: :btree
   add_index "myreads", ["user_id"], name: "index_myreads_on_user_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
@@ -93,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160711133008) do
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["region"], name: "index_users_on_region", using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end
