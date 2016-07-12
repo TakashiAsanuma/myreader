@@ -15,3 +15,9 @@ development:
   pool: 5
   username: rails_user
   password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: myreader
+  pool: 5
