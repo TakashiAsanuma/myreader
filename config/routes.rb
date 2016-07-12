@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   #devise_for :users
   devise_for :users, controllers: {
     omniauth_callbacks: "users/omniauth_callbacks"
-  }
+  }, only: :omniauth_callbacks
 
   resources :feed, only: [:index]
 
@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   end
 
   resource :myreads, only: [:edit, :update]
+
+  resource :users, :only => [:edit, :update]
 end

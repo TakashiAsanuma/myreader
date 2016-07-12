@@ -1,0 +1,8 @@
+<%= link_to "#{current_user.email}", "/config" %>
+<%= link_to "News Top", "/feed" %>
+
+<%= form_for @user, :url => {:action => 'update'} do |f| %>
+  <%= f.label :region %>
+  <%= f.select  :region, [["Global", 0], ["Japan", 1]] %>
+  <%= f.submit "Save changes" %>
+<% end %>
