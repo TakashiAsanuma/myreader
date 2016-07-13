@@ -1,7 +1,7 @@
 class MyreadsController < ApplicationController
 
   def edit
-    @myreads = Myread.where(user_id: current_user.id, region: current_user.region)
+    @myreads = Myread.user_registered(current_user.region, current_user.id)
   end
 
   def update

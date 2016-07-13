@@ -6,4 +6,18 @@ class Feed < ActiveRecord::Base
  
   scope :default, -> { where(default_flag: true) }
   scope :region, ->(region) { where("region = ?", region) }
+
+  def self.channel_feeds(channel_id)
+    self.where("channel_id = ?", channel_id).order("published_at DESC")
+  end
+
+  # return array
+  def self.top_feeds(region, channels)
+    feeds = []
+    channels.each do |channel|
+      feed = self.find_by_channel_id(channel.id)
+      feeds << feed if feed.present?
+    end
+    return feeds.reverse
+  end
 end

@@ -20,4 +20,8 @@ class Myread < ActiveRecord::Base
       end
     end
   end
+
+  def self.user_registered(region, user_id)
+    self.where(region: region, user_id: user_id).order("id")
+  end
 end
