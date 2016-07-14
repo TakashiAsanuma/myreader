@@ -11,10 +11,11 @@ class Feed < ActiveRecord::Base
     self.where("channel_id = ?", channel_id).order("published_at DESC")
   end
 
-  # return array
-  def self.top_feeds(region, channels)
+  # return feeds array
+  def self.top_feeds(channels)
     feeds = []
     channels.each do |channel|
+      puts channel.name
       feed = self.find_by_channel_id(channel.id)
       feeds << feed if feed.present?
     end

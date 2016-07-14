@@ -7,8 +7,8 @@ class FeedController < ApplicationController
     if params[:channel_id].present?
       @feeds = Feed.channel_feeds(params[:channel_id])
     else
-      channels = Channel.enabled.default.where(region: region)
-      @feeds = Feed.top_feeds(region, channels)
+      channels = Channel.enabled.default.where(region: region).order("id")
+      @feeds = Feed.top_feeds(channels)
     end
   end
 end

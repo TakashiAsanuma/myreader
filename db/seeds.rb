@@ -91,5 +91,9 @@ Site.first_or_create([
   {:id => 38, :name => 'CodeIQ', :channel_id => 1003, :url => 'https://codeiq.jp/magazine/feed/'},
   {:id => 39, :name => 'MOONGIFT', :channel_id => 1001, :url => 'http://feeds.feedburner.com/moongift'},
   {:id => 40, :name => 'InfoQ', :channel_id => 1003, :url => 'https://www.infoq.com/jp/feed'},
+  {:id => 41, :name => '＠IT HTML5 + UXフォーラム', :channel_id => 1202, :url => 'http://rss.rssad.jp/rss/itmatmarkit/fwcr/rss.xml'},
+  {:id => 42, :name => '＠IT Security&Trustフォーラム', :channel_id => 1004, :url => 'http://rss.rssad.jp/rss/itmatmarkitsecurity/fsecurity/rss.xml'},
+  {:id => 43, :name => '＠IT Coding Edgeフォーラム', :channel_id => 1003, :url => 'http://rss.rssad.jp/rss/itmatmarkit/fcoding/rss.xml'},
+
 ])
 
