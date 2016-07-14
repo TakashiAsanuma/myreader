@@ -23,7 +23,7 @@ Category.first_or_create([
 
 Channel.first_or_create([
   {:id => 1, :name => 'Tech News', :region => 0, :category_id => 1, :default_flag => true, :enabled => true},
-  {:id => 2, :name => 'Gajet News', :region => 0, :category_id => 1, :default_flag => true, :enabled => true},
+  {:id => 2, :name => 'Gadget News', :region => 0, :category_id => 1, :default_flag => true, :enabled => true},
   {:id => 3, :name => 'Develop News', :region => 0, :category_id => 1, :default_flag => true, :enabled => true},
   {:id => 4, :name => 'Security News', :region => 0, :category_id => 1, :default_flag => true, :enabled => true},
   {:id => 201, :name => 'Design News', :region => 0, :category_id => 200, :default_flag => true, :enabled => true},
@@ -94,6 +94,17 @@ Site.first_or_create([
   {:id => 41, :name => '＠IT HTML5 + UXフォーラム', :channel_id => 1202, :url => 'http://rss.rssad.jp/rss/itmatmarkit/fwcr/rss.xml'},
   {:id => 42, :name => '＠IT Security&Trustフォーラム', :channel_id => 1004, :url => 'http://rss.rssad.jp/rss/itmatmarkitsecurity/fsecurity/rss.xml'},
   {:id => 43, :name => '＠IT Coding Edgeフォーラム', :channel_id => 1003, :url => 'http://rss.rssad.jp/rss/itmatmarkit/fcoding/rss.xml'},
-
+  {:id => 44, :name => 'W3C News', :channel_id => 202, :url => 'https://www.w3.org/blog/news/feed'},
+  {:id => 45, :name => 'Awwwards', :channel_id => 201, :url => 'http://feeds.feedburner.com/awwwards-sites-of-the-day'},
+  {:id => 46, :name => 'CSS-Tricks', :channel_id => 202, :url => 'http://feeds.feedburner.com/CssTricks'},
+  {:id => 47, :name => 'JavaScript.com', :channel_id => 202, :url => 'https://www.javascript.com/feed/rss'},
+  {:id => 48, :name => 'NEWS.JS.ORG', :channel_id => 202, :url => 'https://news.js.org/feed/'},
+  {:id => 49, :name => 'CSS Drive News', :channel_id => 202, :url => 'http://www.cssdrive.com/index.php/news/rss_2.0/'},
+  {:id => 50, :name => 'WebdesignerNews', :channel_id => 201, :url => 'http://feeds.feedburner.com/webdesignernews'},
+  {:id => 51, :name => 'Smashing Magazine', :channel_id => 202, :url => 'https://www.smashingmagazine.com/feed/'},
+  {:id => 52, :name => 'Webdesigner Depot', :channel_id => 201, :url => 'http://feeds2.feedburner.com/webdesignerdepot?format=html'},
+  {:id => 53, :name => 'HOW Design', :channel_id => 201, :url => 'http://www.howdesign.com/feed/'},
+  {:id => 54, :name => 'Designer News', :channel_id => 201, :url => 'https://www.designernews.co/?format=rss'},
+  {:id => 55, :name => 'ReactJS News' :channel_id => 202, :url => 'https://reactjsnews.com/feed'},
 ])
 
