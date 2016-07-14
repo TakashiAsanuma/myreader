@@ -105,6 +105,6 @@ Site.first_or_create([
   {:id => 52, :name => 'Webdesigner Depot', :channel_id => 201, :url => 'http://feeds2.feedburner.com/webdesignerdepot?format=html'},
   {:id => 53, :name => 'HOW Design', :channel_id => 201, :url => 'http://www.howdesign.com/feed/'},
   {:id => 54, :name => 'Designer News', :channel_id => 201, :url => 'https://www.designernews.co/?format=rss'},
-  {:id => 55, :name => 'ReactJS News' :channel_id => 202, :url => 'https://reactjsnews.com/feed'},
+  {:id => 55, :name => 'ReactJS News', :channel_id => 202, :url => 'https://reactjsnews.com/feed'},
 ])
 
