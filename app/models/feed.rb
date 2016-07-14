@@ -18,6 +18,6 @@ class Feed < ActiveRecord::Base
       feed = self.find_by_channel_id(channel.id)
       feeds << feed if feed.present?
     end
-    return feeds.reverse
+    return feeds
   end
 end
