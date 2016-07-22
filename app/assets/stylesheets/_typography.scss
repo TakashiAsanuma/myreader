@@ -6,7 +6,6 @@
 //
 //============================
 
-
 // include typography setting
 @mixin fontsize($size: 24, $base: 16) {
   font-size: $size + px;
@@ -23,4 +22,5 @@
 body{
   @include fontsize(16);
   line-height: 1.8;
+  color: $color-gray;
 }

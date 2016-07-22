@@ -5,6 +5,11 @@
 // date   : 22.07.2016
 //
 //============================
+.container{
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .login{
   background-image: asset-url('login-bg.png');
   background-position: center center;
@@ -37,6 +42,47 @@
         border-radius: 4px;
         text-decoration: none;
         color: #fff;
+      }
+    }
+  }
+}
+
+
+// utility navigation
+.utility{
+  background-image: asset-url('login-bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  ul{
+    display: table;
+    float: right;
+    padding-left: 0;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    li{
+      display: table-cell;
+      list-style: none;
+      a{
+        display: block;
+        width: 15rem;
+        padding: .6rem 1.2rem;
+        box-sizing: border-box;
+        background: rgba($color-white, .3);
+        border: 1px solid $color-white;
+        border-right-width: 0;
+        border-bottom-width: 0;
+        border-radius: 4px 4px 0 0;
+        text-align: center;
+        text-decoration: none;
+        color: $color-white;
+        text-shadow: -1px -1px 0 rgba($color-black, .3);
+      }
+    }
+    li:last-child{
+      a{
+        border-right-width: 1px;
       }
     }
   }

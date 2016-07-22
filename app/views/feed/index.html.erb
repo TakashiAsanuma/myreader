@@ -1,16 +1,37 @@
-<%= link_to "#{current_user.email}", "/config" %>
-<%= link_to "News Top", "/feed" %>
+<header>
+  <div class="utility">
+    <div class="container">
+      <div class="row end-xs">
+        <div class="col-xs-6">
+          <div class="box">
+            <nav>
+              <ul>
+                <li><%= link_to "#{current_user.email}", "/config" %></li>
+                <li><%= link_to "News Top", "/feed" %></li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
 
-<channel>
-<ul style="list-style:none">
-  <% @myreads.each do |myread| %>
-    <li style="float:left">|&nbsp;<%= link_to "#{myread.channel_name}", "/feed?channel_id=#{myread.channel_id}" %>&nbsp;</li>
-  <% end %>
-  <li>|<li>
-</ul>
-</channel>
+<nav>
+  <div class="container">
+    <channel>
+    <ul>
+      <% @myreads.each do |myread| %>
+        <li>|&nbsp;<%= link_to "#{myread.channel_name}", "/feed?channel_id=#{myread.channel_id}" %>&nbsp;</li>
+      <% end %>
+      <li>|<li>
+    </ul>
+    </channel>
+  </div>
+</nav>
 
-<p>Subject</p>
+<main>
+  <div class="container">
 <% @feeds.each do |feed| %>
   <article>
   <dl>
@@ -25,3 +46,5 @@
   </dl>
   </article>
 <% end %>
+  </div>
+</main>
