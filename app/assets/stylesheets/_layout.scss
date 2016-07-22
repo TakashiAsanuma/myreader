@@ -19,11 +19,15 @@
     bottom: 0;
     left: 0;
     margin: auto;
-    width: 289px;
-    height: 76px;
+    width: 600px;
+    height: (700/ 2)* 1px;
     .box-inner{
       text-align: center;
       h1{
+        @include myreader-logo(70px);
+        font-family: 'Lobster', cursive;
+        font-weight: 400;
+        line-height: 1;
         color: #fff;
       }
       a{

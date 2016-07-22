@@ -1,0 +1,26 @@
+//============================
+//
+// myReader typography scss
+// author : kasumi suzuki
+// date   : 22.07.2016
+//
+//============================
+
+
+// include typography setting
+@mixin fontsize($size: 24, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) * 1rem;
+}
+
+@mixin myreader-logo($size){
+  font-size: $size;
+  font-family: 'Lobster', cursive;
+  font-weight: 400;
+}
+
+// body default setting
+body{
+  @include fontsize(16);
+  line-height: 1.8;
+}
