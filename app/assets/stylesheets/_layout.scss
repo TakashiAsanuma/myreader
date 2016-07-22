@@ -1,0 +1,39 @@
+//============================
+//
+// myReader layout scss
+// author : kasumi suzuki
+// date   : 22.07.2016
+//
+//============================
+.login{
+  background-image: asset-url('login-bg.png');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-color: #464646;
+  .box{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    width: 289px;
+    height: 76px;
+    .box-inner{
+      text-align: center;
+      h1{
+        color: #fff;
+      }
+      a{
+        display: inline-block;
+        padding: .8rem 1.2rem;
+        border: 1px solid #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        color: #fff;
+      }
+    }
+  }
+}
