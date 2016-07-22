@@ -1,0 +1,18 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Myreader</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <% if request.path_info == "/feed/index" %>    
+    <%=raw "<meta http-equiv='refresh' content='180'>" %>  
+  <% end %>
+</head>
+<body class="login">
+
+<%= yield %>
+
+</body>
+</html>
