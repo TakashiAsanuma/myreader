@@ -142,5 +142,14 @@ Site.first_or_create([
   {:id => 94, :name => "Slack Engineering Blog", :channel_id => 301, :url => 'https://slack.engineering/feed'},
   {:id => 95, :name => "Google Developers Blog", :channel_id => 301, :url => 'http://feeds.feedburner.com/GDBcode'},
   {:id => 96, :name => "AWS Blog", :channel_id => 301, :url => 'http://feeds.feedburner.com/AmazonWebServicesBlog'},
+  {:id => 97, :name => "deang creators blog", :channel_id => 1303, :url => 'http://creator.dwango.co.jp/feed/rss/'},
+  {:id => 98, :name => "Yahoo! JAPAN Creative Blog", :channel_id => 1303, :url => 'http://yj-creative.tumblr.com/rss'},
+  {:id => 99, :name => "KAYAC DESIGNER'S BLOG", :channel_id => 1303, :url => 'http://design.kayac.com/rss.xml'},
+  {:id => 100, :name => "バンクーバーのうぇぶ屋", :channel_id => 1303, :url => 'http://webya.opdsgn.com/feed/'},
+  {:id => 101, :name => "フォントブログ", :channel_id => 1303, :url => 'http://blog.petitboys.com/feed/'},
+  {:id => 102, :name => "1 pixel｜サイバーエージェント公式クリエイターズブログ", :channel_id => 1303, :url => 'http://feedblog.ameba.jp/rss/ameblo/ca-1pixel/rss20.xml'},
+  {:id => 103, :name => "Fablic開発者ブログ", :channel_id => 1303, :url => 'http://in.fablic.co.jp/rss'},
+  {:id => 104, :name => "nanapi TechBlog » デザイン", :channel_id => 1303, :url => 'http://blog.nanapi.co.jp/tech/category/design/feed/'},
+  {:id => 105, :name => "アライドアーキテクツのクリエイターブログ", :channel_id => 1303, :url => 'http://creator.aainc.co.jp/feed'},
 ])
 
