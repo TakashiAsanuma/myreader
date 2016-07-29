@@ -1,7 +1,7 @@
 class MyreadsController < ApplicationController
 
   def edit
-    @myreads = Myread.user_registered(current_user.region, current_user.id)
+    @myreads = Myread.includes(:channel).user_registered(current_user.region, current_user.id)
   end
 
   def update

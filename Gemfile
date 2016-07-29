@@ -55,5 +55,6 @@ group :development, :test do
   gem 'rails_best_practices', require: false
   gem 'byebug', '~> 5.0.0'
   gem 'pry-rails'
+  gem 'rack-mini-profiler'
 end
 

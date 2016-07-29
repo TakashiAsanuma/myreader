@@ -15,7 +15,6 @@ class Feed < ActiveRecord::Base
   def self.top_feeds(channels)
     feeds = []
     channels.each do |channel|
-      puts channel.name
       feed = self.find_by_channel_id(channel.id)
       feeds << feed if feed.present?
     end

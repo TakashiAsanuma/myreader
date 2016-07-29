@@ -3,9 +3,9 @@ class FeedController < ApplicationController
 
   def index
     region = current_user.region
-    @myreads = Myread.enabled.user_registered(region, current_user.id)
+    @myreads = Myread.includes(:channel).enabled.user_registered(region, current_user.id)
     if params[:channel_id].present?
-      @feeds = Feed.channel_feeds(params[:channel_id])
+      @feeds = Feed.includes(:site).channel_feeds(params[:channel_id])
     else
       channels = Channel.top_channels(region)
       @feeds = Feed.top_feeds(channels)
