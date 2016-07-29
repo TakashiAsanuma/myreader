@@ -169,12 +169,11 @@ Site.first_or_create([
   {:id => 121, :name => "Line25", :channel_id => 201, :url => 'http://feeds2.feedburner.com/Line25'},
   {:id => 122, :name => "MonsterPost", :channel_id => 201, :url => 'http://www.templatemonster.com/blog/feed/'},
   {:id => 123, :name => "1stWebDesigner Blog", :channel_id => 201, :url => 'http://1stwebdesigner.com/blog/feed/'},
-  {:id => 124, :name => "1stWebDesigner Blog", :channel_id => 201, :url => 'http://1stwebdesigner.com/blog/feed/'},
-  {:id => 125, :name => "Design Matters", :channel_id => 201, :url => 'http://www.dtelepathy.com/blog/feed'},
-  {:id => 126, :name => "Designbeep", :channel_id => 201, :url => 'http://designbeep.com/feed/'},
-  {:id => 127, :name => "Inspired Magazine", :channel_id => 201, :url => 'http://inspiredm.com/feed/'},
-  {:id => 128, :name => "InstantShift", :channel_id => 201, :url => 'http://feeds2.feedburner.com/ishift'},
-  {:id => 129, :name => "From up North", :channel_id => 201, :url => 'http://www.fromupnorth.com/feed/'},
-  {:id => 130, :name => "Design Instruct", :channel_id => 201, :url => 'http://designinstruct.com/feed/'},
+  {:id => 124, :name => "Design Matters", :channel_id => 201, :url => 'http://www.dtelepathy.com/blog/feed'},
+  {:id => 125, :name => "Designbeep", :channel_id => 201, :url => 'http://designbeep.com/feed/'},
+  {:id => 126, :name => "Inspired Magazine", :channel_id => 201, :url => 'http://inspiredm.com/feed/'},
+  {:id => 127, :name => "InstantShift", :channel_id => 201, :url => 'http://feeds2.feedburner.com/ishift'},
+  {:id => 128, :name => "From up North", :channel_id => 201, :url => 'http://www.fromupnorth.com/feed/'},
+  {:id => 129, :name => "Design Instruct", :channel_id => 201, :url => 'http://designinstruct.com/feed/'},
 ])
 
