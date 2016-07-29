@@ -8,7 +8,7 @@ class Feed < ActiveRecord::Base
   scope :region, ->(region) { where("region = ?", region) }
 
   def self.channel_feeds(channel_id)
-    self.where("channel_id = ?", channel_id).order("published_at DESC")
+    self.where("channel_id = ?", channel_id).order("published_at DESC").limit(30)
   end
 
   # return feeds array
