@@ -152,5 +152,6 @@ Site.first_or_create([
   {:id => 104, :name => "nanapi TechBlog » デザイン", :channel_id => 1303, :url => 'http://blog.nanapi.co.jp/tech/category/design/feed/'},
   {:id => 105, :name => "アライドアーキテクツのクリエイターブログ", :channel_id => 1303, :url => 'http://creator.aainc.co.jp/feed'},
   {:id => 106, :name => "HOME'S Designer's Blog", :channel_id => 1303, :url => 'http://homes-designers.hatenablog.com/rss'},
+  {:id => 107, :name => "はてな デザイナーブログ", :channel_id => 1303, :url => 'http://design.hatenastaff.com'},
 ])
 
