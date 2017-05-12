@@ -2,19 +2,31 @@
 <%= link_to "News Top", "/feed" %>
 
 <%= render :partial => "layouts/channel_menu" %>
+<main>
+  <div class="container">
+  
+    <div class="row">
+      <div class="col-xs-12 col-sm-8 col-md-6 col-lg-4">
+        <div class="box">
+  <h1>ここにchannel_name</h1>
+  <% @feeds.each do |feed| %>
+    <article>
+    <dl>
+      <% if feed.title? %>
+        <dt><%= link_to "#{feed.title}", "#{feed.url}", :target => "_blank" %></dt>
+        <dd>
+          <time datatime="<%= feed.published_at.in_time_zone("Tokyo").strftime("%Y-%m-%d") %>"><%= feed.published_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M") %></time>
+          &nbsp;&nbsp;
+          <%= feed.site_name %>
+        </dd>
+        <dd><%= feed.summary %> </dd>
+      <% end %>
+    </dl>
+    </article>
+  <% end %>
+        </div>
+      </div>
+    </div>
+    </div>
 
-<p>Subject</p>
-<% @feeds.each do |feed| %>
-  <article>
-  <dl>
-    <% if feed.title? %>
-      <dt><%= link_to "#{feed.title}", "#{feed.url}",:target => "_blank" %></dt>
-      <dd><time datatime= <%= feed.published_at.in_time_zone('Tokyo').strftime("%Y-%m-%d") %>>
-      <%= feed.published_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M") %></time>
-      &nbsp;&nbsp;
-      <%= feed.site_name %></dd>
-      <dd><%= feed.summary %> </dd>
-    <% end %>
-  </dl>
-  </article>
-<% end %>
+</main>
