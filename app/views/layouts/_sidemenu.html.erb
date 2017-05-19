@@ -1,0 +1,18 @@
+<div class="l-sidemenu">
+  <nav>
+    <div class="menu-home">
+      <%= link_to("/config") do %>
+      <span class="material-icons">home</span>
+      <%- end -%>
+    </div>
+    <div class="menu-setting">
+      <%= link_to("/feed") do %>
+      <span class="material-icons">settings</span>
+      <%- end -%>
+    </div>
+  </nav>
+</div>
+<% if false %>
+<%= link_to "#{current_user.email}", "/config" %>
+<%= link_to "News Top", "/feed" %>
+<% end %>

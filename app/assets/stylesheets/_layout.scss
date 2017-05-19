@@ -1,10 +1,17 @@
-//============================
+//=================================================
 //
 // myReader layout scss
 // author : kasumi suzuki
 // date   : 22.07.2016
 //
-//============================
+//=================================================
+// color
+//=================================================
+$color-teal:  #009688;
+$color-black: #000;
+$color-white: #fff;
+// Login
+//=================================================
 .login{
   background-image: asset-url('login-bg.png');
   background-position: center center;
@@ -36,4 +43,25 @@
       }
     }
   }
+}
+
+// side menu
+//=================================================
+.l-sidemenu{
+  position: fixed;
+  height: 100%;
+  background: $color-teal;
+  color: $color-white;
+  a{
+    color: $color-white;
+  }
+}
+[class^="menu"]{
+  padding: 1rem 1rem 0;
+}
+
+// main contents
+//=================================================
+.l_main_contents{
+  margin-left: (56 / 16) * 1rem + 1rem;
 }
