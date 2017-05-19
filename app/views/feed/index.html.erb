@@ -1,9 +1,15 @@
+<div class="overlay" id="js__overlay"></div>
+<div class="side_menu_btn" id="js__sideMenuBtn">
+  <div class="ellipsis-v">
+    <span class="point top"></span>
+    <span class="point mid"></span>
+    <span class="point bot"></span>
+  </div>
+</div>
+<%= render :partial => "layouts/channel_menu" %>
+<div class="l_main_contents">
 <%= render :partial => "layouts/sidemenu" %>
-<main>
-  <div class="l_main_contents">
-    
-    <%= render :partial => "layouts/channel_menu" %>
-    
+  <main>
     <h1><%= @subject %></h1>
     <div class="container">
       <div class="row">
@@ -26,5 +32,5 @@
         </div>
       </div>
     </div>
-  </div>
-</main>
+  </main>
+</div>
