@@ -17,22 +17,22 @@ ActiveRecord::Schema.define(version: 20160712093657) do
   enable_extension "plpgsql"
 
   create_table "categories", force: :cascade do |t|
-    t.string   "name",       limit: 255
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.integer  "region"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
   end
 
   add_index "categories", ["region"], name: "index_categories_on_region", using: :btree
 
   create_table "channels", force: :cascade do |t|
-    t.string   "name",         limit: 255
-    t.integer  "region"
+    t.string   "name"
     t.integer  "category_id"
     t.boolean  "default_flag"
     t.boolean  "enabled"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "region"
   end
 
   add_index "channels", ["category_id"], name: "index_channels_on_category_id", using: :btree
@@ -42,15 +42,15 @@ ActiveRecord::Schema.define(version: 20160712093657) do
 
   create_table "feeds", force: :cascade do |t|
     t.integer  "site_id"
-    t.integer  "channel_id"
-    t.integer  "region"
-    t.string   "title",        limit: 255
-    t.string   "url",          limit: 255
+    t.string   "title"
+    t.string   "url"
     t.datetime "published_at"
-    t.string   "summary",      limit: 255
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "summary"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "channel_id"
     t.boolean  "default_flag"
+    t.integer  "region"
   end
 
   add_index "feeds", ["channel_id"], name: "index_feeds_on_channel_id", using: :btree
@@ -60,10 +60,10 @@ ActiveRecord::Schema.define(version: 20160712093657) do
   create_table "myreads", force: :cascade do |t|
     t.integer  "user_id"
     t.integer  "channel_id"
-    t.integer  "region"
     t.boolean  "enabled"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "region"
   end
 
   add_index "myreads", ["channel_id"], name: "index_myreads_on_channel_id", using: :btree
@@ -72,29 +72,29 @@ ActiveRecord::Schema.define(version: 20160712093657) do
   add_index "myreads", ["user_id"], name: "index_myreads_on_user_id", using: :btree
 
   create_table "sites", force: :cascade do |t|
-    t.string   "name",       limit: 255
-    t.string   "url",        limit: 255
+    t.string   "name"
+    t.string   "url"
     t.integer  "channel_id"
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "sites", ["channel_id"], name: "index_sites_on_channel_id", using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "email",                  limit: 255, default: "", null: false
-    t.integer  "region",                             default: 0
-    t.string   "encrypted_password",     limit: 255, default: "", null: false
-    t.string   "reset_password_token",   limit: 255
+    t.string   "email",                  default: "", null: false
+    t.string   "encrypted_password",     default: "", null: false
+    t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",                      default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,  null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip",     limit: 255
-    t.string   "last_sign_in_ip",        limit: 255
-    t.datetime "created_at",                                      null: false
-    t.datetime "updated_at",                                      null: false
+    t.string   "current_sign_in_ip"
+    t.string   "last_sign_in_ip"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+    t.integer  "region",                 default: 0
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

@@ -1,27 +1,36 @@
-<%= link_to "#{current_user.email}", "/config" %>
-<%= link_to "News Top", "/feed" %>
-
-<channel>
-<ul style="list-style:none">
-  <% @myreads.each do |myread| %>
-    <li style="float:left">|&nbsp;<%= link_to "#{myread.channel_name}", "/feed?channel_id=#{myread.channel_id}" %>&nbsp;</li>
-  <% end %>
-  <li>|<li>
-</ul>
-</channel>
-
-<p><%= @subject %></p>
-<% @feeds.each do |feed| %>
-  <article>
-  <dl>
-    <% if feed.title? %>
-      <dt><%= link_to "#{feed.title}", "#{feed.url}",:target => "_blank" %></dt>
-      <dd><time datatime= <%= feed.published_at.in_time_zone('Tokyo').strftime("%Y-%m-%d") %>>
-      <%= feed.published_at.in_time_zone('Tokyo').strftime("%Y-%m-%d %H:%M") %></time>
-      &nbsp;&nbsp;
-      <%= feed.site_name %></dd>
-      <dd><%= feed.summary %> </dd>
+<div class="overlay" id="js__overlay"></div>
+<div class="side_menu_btn" id="js__sideMenuBtn">
+  <div class="ellipsis-v">
+    <span class="point top"></span>
+    <span class="point mid"></span>
+    <span class="point bot"></span>
+  </div>
+</div>
+<%= render :partial => "layouts/channel_menu" %>
+<div class="l_main_contents">
+<%= render :partial => "layouts/sidemenu" %>
+  <main>
+    <h1><%= @subject %></h1>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 col-sm-12 col-lg-12 col-md-12">
+    <% @feeds.each do |feed| %>
+      <article>
+      <dl>
+        <% if feed.title? %>
+          <dt><%= link_to "#{feed.title}", "#{feed.url}",:target => "_blank" %></dt>
+          <dd>
+            <time datatime= "<%= feed.published_at.in_time_zone("Tokyo").strftime("%Y-%m-%d") %>"><%= feed.published_at.in_time_zone("Tokyo").strftime("%Y-%m-%d %H:%M") %></time><br>
+            <%= feed.site_name %>
+          </dd>
+          <dd><%= feed.summary %> </dd>
+        <% end %>
+      </dl>
+      </article>
     <% end %>
-  </dl>
-  </article>
-<% end %>
+        
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
