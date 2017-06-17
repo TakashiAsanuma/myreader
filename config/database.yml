@@ -16,6 +16,14 @@ development:
   username: rails_user
   password:
 
+test:
+  adapter: postgresql
+  encoding: unicode
+  database: myreader_test
+  pool: 5
+  username: rails_user
+  password:
+
 production:
   adapter: postgresql
   encoding: unicode

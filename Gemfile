@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.2.5.1'
+gem 'rails', '5.1.1'
 # Use mysql as the database for Active Record
 #gem 'mysql2', '~>0.3.13'
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+gem 'sass-rails', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
-gem 'coffee-rails', '~> 4.1.0'
+gem 'coffee-rails', '>= 4.1.1'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-# gem 'therubyracer', platforms: :ruby
+gem 'therubyracer'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
@@ -39,9 +39,10 @@ gem 'therubyracer'
 gem 'static_model'
 gem 'config'
 gem 'whenever', require: false 
+gem 'json', github: 'flori/json', branch: 'v1.8'
 
 # Google oauth
-gem 'devise'
+gem 'devise', '>= 4.3.0'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 
@@ -50,7 +51,6 @@ group :development, :test do
   gem 'binding_of_caller'
   gem 'bullet'
   gem 'ruby-growl'
-  gem 'quiet_assets'
   gem 'rubocop', require: false
   gem 'rails_best_practices', require: false
   gem 'byebug', '~> 5.0.0'
