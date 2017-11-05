@@ -1,4 +1,4 @@
-class CreateMyreads < ActiveRecord::Migration
+class CreateMyreads < ActiveRecord::Migration[4.2]
   def change
     create_table :myreads do |t|
       t.integer :user_id

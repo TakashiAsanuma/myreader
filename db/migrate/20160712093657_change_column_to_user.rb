@@ -1,4 +1,4 @@
-class ChangeColumnToUser < ActiveRecord::Migration
+class ChangeColumnToUser < ActiveRecord::Migration[4.2]
   def change
     add_index :users, :region
     add_index :categories, :region

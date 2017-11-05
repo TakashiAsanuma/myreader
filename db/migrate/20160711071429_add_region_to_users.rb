@@ -1,4 +1,4 @@
-class AddRegionToUsers < ActiveRecord::Migration
+class AddRegionToUsers < ActiveRecord::Migration[4.2]
   def change
     add_column :users,      :region, :integer, :after => :email
     add_column :categories, :region, :integer, :after => :name

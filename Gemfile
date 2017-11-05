@@ -40,6 +40,7 @@ gem 'static_model'
 gem 'config'
 gem 'whenever', require: false 
 gem 'json', github: 'flori/json', branch: 'v1.8'
+gem 'dotenv-rails'
 
 # Google oauth
 gem 'devise', '>= 4.3.0'
