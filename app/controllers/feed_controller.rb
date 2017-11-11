@@ -2,6 +2,9 @@ class FeedController < ApplicationController
   before_action :init_myread 
 
   def index
+    if params[:region].present?
+      current_user.update!(region: params[:region])
+    end
     region = current_user.region
     @myreads = Myread.includes(:channel).enabled.user_registered(region, current_user.id)
     if params[:channel_id].present?
