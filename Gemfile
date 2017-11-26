@@ -41,6 +41,7 @@ gem 'config'
 gem 'whenever', require: false 
 gem 'json', github: 'flori/json', branch: 'v1.8'
 gem 'dotenv-rails'
+gem 'puma'
 
 # Google oauth
 gem 'devise', '>= 4.3.0'
