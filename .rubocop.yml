@@ -125,3 +125,6 @@ Style/SpaceInsideHashLiteralBraces:
 # += => + =
 Style/SpaceAroundOperators:
   Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
