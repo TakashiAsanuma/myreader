@@ -62,7 +62,7 @@ end
 
 group :development do
   gem 'capistrano'
+  gem 'capistrano-bundler'
   gem 'capistrano-rails'
   gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
 end
