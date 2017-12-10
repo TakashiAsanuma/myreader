@@ -60,3 +60,9 @@ group :development, :test do
   gem 'rack-mini-profiler'
 end
 
+group :development do
+  gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+end
